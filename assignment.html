@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .toggle-container {
+            display: inline-block;
+            cursor: pointer;
+        }
+        .toggle-switch {
+            width: 50px;
+            height: 25px;
+            margin-top: 350px;
+            margin-left: 700px;
+            background-color: rgb(12, 12, 47);
+            border-radius: 15px;
+            position: relative;
+        }
+        .toggle-handle {
+            width: 20px;
+            height: 20px;
+            background-color: #f6ecec;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(5px, -50%);
+            transition: transform 0.3s;
+        }
+        .on .toggle-handle {
+            transform: translate(25px, -50%);
+        }
+    </style>
+</head>
+<body>
+<div class="toggle-container" id="toggleContainer">
+    <div class="toggle-switch" id="toggleSwitch">
+        <div class="toggle-handle"></div>
+    </div>
+</div>
+<script>
+    
+    const toggleSwitch = document.getElementById('toggleSwitch');
+    const toggleContainer = document.getElementById('toggleContainer');
+    toggleContainer.addEventListener('click', () => {
+        toggleSwitch.classList.toggle('on');
+        if (toggleSwitch.classList.contains('on')) {
+            document.body.style.backgroundColor = '#4CAF56'; 
+        } else {
+            document.body.style.backgroundColor = '#f44336'; 
+        }
+    });
+</script>
+</body>
+</html>
